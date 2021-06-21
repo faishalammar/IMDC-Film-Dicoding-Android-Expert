@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constrain_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:backgroundColor="@color/dark_gray"
+    android:layout_margin="0dp"
+    android:padding="12dp"
+    android:orientation="horizontal"
+    tools:layout_editor_absoluteX="12dp"
+    android:background="@drawable/border">
+
+    <ImageView
+        android:id="@+id/film_poster"
+        android:layout_width="67dp"
+        android:layout_height="98dp"
+        android:contentDescription="@string/this_is_a_poster"
+        android:src="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/film_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/fav_button"
+        app:layout_constraintStart_toEndOf="@+id/film_poster"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/film_title" />
+
+    <LinearLayout
+        android:id="@+id/genre_linear_layout_box"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/film_poster"
+        app:layout_constraintTop_toBottomOf="@+id/film_title" >
+
+
+        <LinearLayout
+            android:id="@+id/genre_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/film_poster"
+            app:layout_constraintTop_toBottomOf="@+id/film_title" />
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="@color/dark_nightBlack"
+        android:contentDescription="@string/add_fav_movie"
+        android:padding="8dp"
+        android:src="@drawable/ic_favorite_border_white_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

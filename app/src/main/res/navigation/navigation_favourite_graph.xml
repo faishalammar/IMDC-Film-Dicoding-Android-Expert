@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_favourite_graph"
+    app:startDestination="@id/favourite_module_navigation">
+
+    <!-- dynamic feature module -->
+    <include-dynamic
+        android:id="@+id/favourite_module_navigation"
+        android:name="dicoding.mobileprogramming.faishalammar.imdc.favourites.presentation.fragment.FavouriteFragment"
+        app:moduleName="favourites"
+        app:graphResName="favourite_module_navigation">
+    </include-dynamic>
+
+
+</navigation>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">IMDC</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="this_is_a_poster">This is a poster</string>
+    <string name="film_title">Film Title</string>
+    <string name="genre_name">genre 1</string>
+    <string name="movies_page">Movies</string>
+    <string name="tv_series_page">TV Series</string>
+    <string name="film_desc_example">Determined to ensure Superman\'s ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</string>
+    <string name="film_genre_example">Action | Drama | Romance</string>
+    <string name="rating_number_example">7.3</string>
+    <string name="retrieving_data">Retrieving Data ...</string>
+    <string name="add_fav_movie">add fav movie</string>
+    <string name="favourite_labe">Favourite</string>
+    <string name="add_favourite_film">Add %s as favourites</string>
+    <string name="delete_favourite_film">Delete %s from favourites</string>
+    <string name="error_message_retrieve">Terjadi kesalahan</string>
+    <string name="title_favourites">Favourite Film</string>
+    <string name="module_install_status">Favourite Module Installation Status : %s</string>
+    <string name="installing_module_favourite">Installing Module Favourite</string>
+
+</resources>
