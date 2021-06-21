@@ -6,7 +6,7 @@ buildscript {
     ext.fragment_ktx_version = "1.2.5"
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -20,7 +20,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
