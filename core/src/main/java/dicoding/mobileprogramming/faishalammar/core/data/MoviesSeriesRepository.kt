@@ -1,6 +1,7 @@
 package dicoding.mobileprogramming.faishalammar.core.data
 
 
+import android.util.Log
 import dicoding.mobileprogramming.faishalammar.core.data.source.remote.network.ApiResponse
 import dicoding.mobileprogramming.faishalammar.core.data.source.remote.response.GenreResponse
 import dicoding.mobileprogramming.faishalammar.core.data.source.remote.response.MovieResponse
@@ -56,6 +57,8 @@ class MoviesSeriesRepository @Inject constructor(
                             response.genre,
                             true
                         )
+
+                    Log.d("movie : ", movie.title)
 
                     movieList.add(movie)
                     localDataSource.insertFilm(movie)

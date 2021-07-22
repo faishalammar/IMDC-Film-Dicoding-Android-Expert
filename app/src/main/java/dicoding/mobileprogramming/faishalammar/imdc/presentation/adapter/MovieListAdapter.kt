@@ -122,7 +122,7 @@ class MovieListAdapter(val appContext: Context): RecyclerView.Adapter<MovieListA
         }
 
         holder.itemView.setOnClickListener{
-            onItemClickCallback.onItemClicked(film);
+            onItemClickCallback.onItemClicked(film)
         }
 
         holder.favButton.setOnClickListener{

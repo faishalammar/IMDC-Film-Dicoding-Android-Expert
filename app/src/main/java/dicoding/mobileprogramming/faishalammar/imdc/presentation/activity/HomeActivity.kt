@@ -1,9 +1,8 @@
 package dicoding.mobileprogramming.faishalammar.imdc.presentation.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dicoding.mobileprogramming.faishalammar.imdc.MyApplication
-import dicoding.mobileprogramming.faishalammar.imdc.R
 import dicoding.mobileprogramming.faishalammar.imdc.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

@@ -10,5 +10,5 @@ import dicoding.mobileprogramming.faishalammar.core.utils.Converters
         exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class MoviesSeriesDatabase : RoomDatabase(){
-    abstract fun movieSeriesDao() : dicoding.mobileprogramming.faishalammar.core.data.source.local.room.MovieSeriesDao
+    abstract fun movieSeriesDao() : MovieSeriesDao
 }

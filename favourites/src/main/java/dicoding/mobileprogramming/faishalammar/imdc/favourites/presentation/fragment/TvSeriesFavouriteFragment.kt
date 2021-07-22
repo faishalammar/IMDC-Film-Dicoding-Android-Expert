@@ -61,7 +61,7 @@ class TvSeriesFavouriteFragment : Fragment() {
         })
 
         seriesAdapter.setOnItemClickCallback(object :
-            dicoding.mobileprogramming.faishalammar.imdc.favourites.presentation.adapter.SeriesFavouriteAdapter.OnItemClickCallback {
+            SeriesFavouriteAdapter.OnItemClickCallback {
             override fun onItemClicked(film: Series) {
             }
 

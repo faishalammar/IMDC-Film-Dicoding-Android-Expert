@@ -47,7 +47,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     @SuppressLint("CheckResult")
     fun getAllSeries() : Flowable<ApiResponse<List<TvSeriesResponse>>> {
         val resultData = PublishSubject.create<ApiResponse<List<TvSeriesResponse>>>()
-        val client = apiService.getListTvSeries(dicoding.mobileprogramming.faishalammar.core.data.source.remote.RemoteDataSource.Companion.API_KEY)
+        val client = apiService.getListTvSeries(API_KEY)
 
         client
             .subscribeOn(Schedulers.computation())
@@ -70,7 +70,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     fun getMovieDetail(movieId : Int): Flowable<ApiResponse<MovieResponse>> {
         val resultData = PublishSubject.create<ApiResponse<MovieResponse>>()
         val client = apiService.getMovieDetail(movieId,
-            dicoding.mobileprogramming.faishalammar.core.data.source.remote.RemoteDataSource.Companion.API_KEY)
+            API_KEY)
 
         client
             .subscribeOn(Schedulers.computation())
@@ -93,7 +93,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
         val resultData = PublishSubject.create<ApiResponse<TvSeriesResponse>>()
         val client = apiService.getSeriesDetail(seriesId,
-            dicoding.mobileprogramming.faishalammar.core.data.source.remote.RemoteDataSource.Companion.API_KEY)
+            API_KEY)
 
         client
             .subscribeOn(Schedulers.computation())
@@ -114,8 +114,8 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     @SuppressLint("CheckResult")
     fun getAllGenre(forMovie : Boolean) : Flowable<ApiResponse<List<GenreResponse>>> {
         val resultData = PublishSubject.create<ApiResponse<List<GenreResponse>>>()
-        val client = (if(forMovie) apiService.getMovieGenre(dicoding.mobileprogramming.faishalammar.core.data.source.remote.RemoteDataSource.Companion.API_KEY) else apiService.getTvGenre(
-            dicoding.mobileprogramming.faishalammar.core.data.source.remote.RemoteDataSource.Companion.API_KEY
+        val client = (if(forMovie) apiService.getMovieGenre(API_KEY) else apiService.getTvGenre(
+            API_KEY
         ))
 
         client

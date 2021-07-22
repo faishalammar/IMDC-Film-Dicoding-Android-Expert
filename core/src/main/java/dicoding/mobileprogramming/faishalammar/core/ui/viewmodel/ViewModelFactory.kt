@@ -2,7 +2,6 @@ package dicoding.mobileprogramming.faishalammar.core.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dicoding.mobileprogramming.faishalammar.core.domain.usecase.FilmUseCase
 import javax.inject.Inject
 import javax.inject.Provider
 

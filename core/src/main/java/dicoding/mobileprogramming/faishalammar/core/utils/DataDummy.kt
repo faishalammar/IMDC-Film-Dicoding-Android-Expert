@@ -9,7 +9,7 @@ object DataDummy {
 
     val genreResponse = GenreResponse(12, "action")
     val genreResponse2 = GenreResponse(18, "fantasy")
-    val arrGenreDummy = arrayListOf<GenreResponse>(genreResponse, genreResponse2)
+    val arrGenreDummy = arrayListOf(genreResponse, genreResponse2)
     
     fun generateDummyMovies(): ArrayList<MoviesAndTvShowsEntity> {
 
