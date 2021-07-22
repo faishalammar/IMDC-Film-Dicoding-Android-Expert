@@ -1,5 +1,6 @@
 package dicoding.mobileprogramming.faishalammar.imdc.presentation.activity
 
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dicoding.mobileprogramming.faishalammar.imdc.MyApplication
@@ -21,4 +22,19 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onBackPressed() {
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q &&
+            isTaskRoot &&
+            supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.backStackEntryCount ?: 0 == 0 &&
+            supportFragmentManager.backStackEntryCount == 0
+        ) {
+            finishAfterTransition()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
