@@ -10,7 +10,6 @@
     android:layout_marginTop="4dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="4dp"
-    android:background="@color/dark_background"
     android:backgroundTint="@color/dark_gray">
 
     <androidx.constraintlayout.widget.ConstraintLayout

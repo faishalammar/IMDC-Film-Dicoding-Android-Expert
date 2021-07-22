@@ -5,7 +5,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@color/dark_gray"
     android:padding="8dp"
     android:textColor="@color/design_default_color_background"
     tools:text="@string/genre_name">

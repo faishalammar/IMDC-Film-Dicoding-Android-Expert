@@ -25,7 +25,7 @@ import kotlin.concurrent.thread
 class MovieListFragment : Fragment() {
 
     private lateinit var fragmentMovieListBinding: FragmentMovieListBinding
-    private lateinit var moviesAdapter: MovieListAdapter
+    private var moviesAdapter: MovieListAdapter? = null
 
     @Inject
     lateinit var factory: ViewModelFactory
@@ -61,8 +61,8 @@ class MovieListFragment : Fragment() {
 
         filmListViewModel.getMovies().observe(viewLifecycleOwner, { listMovie ->
             if (listMovie != null) {
-                moviesAdapter.setData(listMovie.data as ArrayList<Movie>?)
-                moviesAdapter.notifyDataSetChanged()
+                moviesAdapter!!.setData(listMovie.data as ArrayList<Movie>?)
+                moviesAdapter!!.notifyDataSetChanged()
             }
         })
 
@@ -71,7 +71,7 @@ class MovieListFragment : Fragment() {
         Movies Click to Show Detail
          */
 
-        moviesAdapter.setOnItemClickCallback(object :
+        moviesAdapter!!.setOnItemClickCallback(object :
             MovieListAdapter.OnItemClickCallback {
             override fun onItemClicked(film: Movie) {
                 showMovieDetail(film)
@@ -122,5 +122,11 @@ class MovieListFragment : Fragment() {
             Toast.LENGTH_SHORT
         ).show()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        moviesAdapter = null
+    }
+
 
 }
