@@ -17,7 +17,7 @@ class NetworkModule {
     fun provideOkHttpClient(): OkHttpClient {
         val mainDomain = "https://api.themoviedb.org/3/"
         val certificatePinner = CertificatePinner.Builder()
-            .add(mainDomain, "sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")
+            .add(mainDomain, "sha256/0950fbaf3ba71f574ebe3e4d5549f9d6=")
             .build()
         return OkHttpClient.Builder()
             .connectTimeout(120, TimeUnit.SECONDS)
