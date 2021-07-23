@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import dicoding.mobileprogramming.faishalammar.core.utils.Converters
 
 @Database(entities = [dicoding.mobileprogramming.faishalammar.core.data.source.local.entity.MoviesAndTvShowsEntity::class, dicoding.mobileprogramming.faishalammar.core.data.source.local.entity.GenreEntity::class],
-        version = 3,
+        version = 4,
         exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class MoviesSeriesDatabase : RoomDatabase(){

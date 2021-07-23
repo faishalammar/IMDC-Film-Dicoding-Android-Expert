@@ -47,7 +47,6 @@ class MovieFavouriteFragment : Fragment() {
 
         val activityContext : Context = activity?.applicationContext!!
         val moviesAdapter = MovieFavouriteAdapter(activityContext)
-        Log.d("Success go to : ", "Favourite Movie Modules")
 
         with(binding.rvFavMovie) {
             layoutManager = LinearLayoutManager(activityContext)

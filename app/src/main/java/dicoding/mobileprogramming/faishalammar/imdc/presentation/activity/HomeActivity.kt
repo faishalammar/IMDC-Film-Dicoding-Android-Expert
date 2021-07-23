@@ -22,10 +22,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onStop() {
-        super.onStop()
-    }
-
     override fun onBackPressed() {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q &&
             isTaskRoot &&
@@ -37,4 +33,14 @@ class HomeActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+    override fun onPause() {
+        super.onPause()
+        _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
 }

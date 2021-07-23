@@ -24,7 +24,7 @@ import kotlin.concurrent.thread
 
 class MovieListFragment : Fragment() {
 
-    private lateinit var fragmentMovieListBinding: FragmentMovieListBinding
+    private var fragmentMovieListBinding: FragmentMovieListBinding? = null
     private var moviesAdapter: MovieListAdapter? = null
 
     @Inject
@@ -52,7 +52,7 @@ class MovieListFragment : Fragment() {
         moviesAdapter = MovieListAdapter(activityContext)
 
 
-        with(fragmentMovieListBinding.rvMovie) {
+        with(fragmentMovieListBinding!!.rvMovie) {
             layoutManager = LinearLayoutManager(activityContext)
             setHasFixedSize(true)
             adapter = moviesAdapter
@@ -89,7 +89,7 @@ class MovieListFragment : Fragment() {
 
         )
 
-        return fragmentMovieListBinding.root
+        return fragmentMovieListBinding!!.root
     }
 
 
@@ -126,6 +126,7 @@ class MovieListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         moviesAdapter = null
+        fragmentMovieListBinding = null
     }
 
 

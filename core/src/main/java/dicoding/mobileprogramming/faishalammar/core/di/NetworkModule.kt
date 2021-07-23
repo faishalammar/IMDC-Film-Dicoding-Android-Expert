@@ -15,9 +15,12 @@ class NetworkModule {
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
-        val mainDomain = "https://api.themoviedb.org/3/"
+        val mainDomain = "api.themoviedb.org"
         val certificatePinner = CertificatePinner.Builder()
-            .add(mainDomain, "sha256/0950fbaf3ba71f574ebe3e4d5549f9d6=")
+            .add(mainDomain, "sha256/+vqZVAzTqUP8BGkfl88yU7SQ3C8J2uNEa55B7RZjEg0=")
+            .add(mainDomain, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
+            .add(mainDomain, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+
             .build()
         return OkHttpClient.Builder()
             .connectTimeout(120, TimeUnit.SECONDS)

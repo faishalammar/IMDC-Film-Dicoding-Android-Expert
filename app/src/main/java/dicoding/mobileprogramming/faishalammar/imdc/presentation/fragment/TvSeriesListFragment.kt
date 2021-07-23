@@ -32,7 +32,7 @@ class TvSeriesListFragment : Fragment() {
     }
 
 
-    private lateinit var fragmentTvSeriesListBinding: FragmentTvSeriesListBinding
+    private var fragmentTvSeriesListBinding: FragmentTvSeriesListBinding? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -52,7 +52,7 @@ class TvSeriesListFragment : Fragment() {
             }
         })
 
-        with(fragmentTvSeriesListBinding.rvSeries) {
+        with(fragmentTvSeriesListBinding!!.rvSeries) {
             layoutManager = LinearLayoutManager(activityContext)
             setHasFixedSize(true)
             adapter = seriesAdapter
@@ -81,7 +81,7 @@ class TvSeriesListFragment : Fragment() {
         }
         )
 
-        return fragmentTvSeriesListBinding.root
+        return fragmentTvSeriesListBinding!!.root
     }
 
 
@@ -116,4 +116,8 @@ class TvSeriesListFragment : Fragment() {
         ).show()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        fragmentTvSeriesListBinding = null
+    }
 }

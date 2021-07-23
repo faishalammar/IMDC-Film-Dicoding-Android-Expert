@@ -58,7 +58,6 @@ class MoviesSeriesRepository @Inject constructor(
                             true
                         )
 
-                    Log.d("movie : ", movie.title)
 
                     movieList.add(movie)
                     localDataSource.insertFilm(movie)

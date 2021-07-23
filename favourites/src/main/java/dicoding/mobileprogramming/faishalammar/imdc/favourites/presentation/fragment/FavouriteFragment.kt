@@ -20,7 +20,11 @@ import dicoding.mobileprogramming.faishalammar.imdc.favourites.presentation.adap
 
 class FavouriteFragment : Fragment() {
 
-    private lateinit var fragmentFavouriteBinding: FragmentFavouriteBinding
+    private var fragmentFavouriteBinding: FragmentFavouriteBinding? = null
+    private var viewPager : ViewPager2? = null
+    private var tabLayout : TabLayout? = null
+    private var tabMediator : TabLayoutMediator? = null
+
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(R.string.movies_page, R.string.tv_series_page)
@@ -40,30 +44,37 @@ class FavouriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        Log.d("Success go to : ", "Favourite Modules")
-
         fragmentFavouriteBinding = FragmentFavouriteBinding.inflate(layoutInflater, container, false)
-
-        val activityContext : Context = activity?.applicationContext!!
 
         /*
         ----- Tab Layout ---
         */
 
-        val viewPager: ViewPager2 = fragmentFavouriteBinding.viewPager2
-        val tabLayout: TabLayout = fragmentFavouriteBinding.tabs
+        viewPager = fragmentFavouriteBinding!!.viewPager2
+        tabLayout = fragmentFavouriteBinding!!.tabs
 
-        viewPager.adapter = SectionsPagerAdapter(requireActivity())
+        viewPager!!.adapter = SectionsPagerAdapter(requireActivity())
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        tabMediator = TabLayoutMediator(tabLayout!!, viewPager!!) { tab, position ->
             val tabText = resources.getString(TAB_TITLES[position])
             tab.text = tabText
-        }.attach()
+        }
 
+        tabMediator!!.attach()
+
+        viewPager!!.isSaveEnabled = false
 
         // Inflate the layout for this fragment
-        return fragmentFavouriteBinding.root
+        return fragmentFavouriteBinding!!.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        fragmentFavouriteBinding = null
+        viewPager = null
+        tabLayout = null
+        tabMediator?.detach()
+        tabMediator = null
+    }
 
 }

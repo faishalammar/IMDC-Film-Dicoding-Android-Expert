@@ -21,12 +21,11 @@ class FavouriteContainerFragment : Fragment() {
 
         _binding = FragmentFavouriteContainerBinding.inflate(layoutInflater)
 
-        Log.d("Ready to go to : ", "Favourite Modules")
-
-        val installMonitor = DynamicInstallMonitor()
-        val dynamicExtras = DynamicExtras(installMonitor)
 
         return binding.root
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
